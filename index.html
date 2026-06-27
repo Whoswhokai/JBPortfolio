@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Benedict Villaflor — Player Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- theme checkbox hack: must stay before .page so ~ selector works -->
+<input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+
+<div class="page">
+
+  <!-- scanline overlay for the arcade feel -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <span class="brand">JBV<span class="brand-blink">_</span></span>
+    <label for="theme-toggle" class="switch" aria-label="Toggle light and dark mode">
+      <span class="switch-track">
+        <span class="switch-thumb"></span>
+      </span>
+      <span class="switch-text switch-text--dark">DARK</span>
+      <span class="switch-text switch-text--light">LIGHT</span>
+    </label>
+  </header>
+
+  <!-- ===================== HERO / PLAYER CARD ===================== -->
+  <section class="hero" id="top">
+    <div class="player-card">
+      <div class="card-corner card-corner--tl"></div>
+      <div class="card-corner card-corner--tr"></div>
+      <div class="card-corner card-corner--bl"></div>
+      <div class="card-corner card-corner--br"></div>
+
+      <div class="card-body">
+        <div class="avatar-frame">
+          <img class="avatar-photo" src="data:image/jpeg;base64,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" alt="John Benedict Villaflor 3rd">
+          <span class="avatar-shine"></span>
+        </div>
+
+        <div class="card-info">
+          <h1 class="name">John Benedict<br>Villaflor
+          <p class="role">3rd-Year BSIT Student &amp; Aspiring Game Developer</p>
+
+          <div class="stat-row">
+            <div class="stat-chip">
+              <span class="stat-label">LEVEL</span>
+              <span class="stat-value">3rd Year</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-label">CLASS</span>
+              <span class="stat-value">BSIT</span>
+            </div>
+          </div>
+
+          <div class="xp-block">
+            <div class="xp-label">
+              <span>GAME DEV XP</span>
+              <span>GRINDING DAILY</span>
+            </div>
+            <div class="xp-bar">
+              <div class="xp-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="quick-nav">
+      <a href="#about"><span class="cursor">►</span>About</a>
+      <a href="#education"><span class="cursor">►</span>Education</a>
+      <a href="#projects"><span class="cursor">►</span>Projects</a>
+      <a href="#skills"><span class="cursor">►</span>Skills</a>
+      <a href="#contact"><span class="cursor">►</span>Contact</a>
+    </nav>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="body-text">
+      I am a 3rd-year IT student at Eastern Samar State University pushing towards a
+      career in game development. I am constantly practicing, learning something new
+      every day, and leveling up my skills day by day. I don't know everything yet, but
+      I am working hard every single day to turn my ideas into playable games.
+    </p>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="section" id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-card">
+      <div class="edu-mark">ESSU</div>
+      <div class="edu-text">
+        <h3>Eastern Samar State University</h3>
+        <p>Bachelor of Science in Information Technology</p>
+        <span class="badge">3rd Year Student</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3>MILOPO</h3>
+        <span class="badge badge--accent">2nd-Year Finals Requirement</span>
+      </div>
+      <p class="body-text">
+        MILOPO is a business showcase website created as a 2nd-year finals requirement
+        for an Entrepreneurship subject. Built purely with HTML and CSS, this project
+        was a collaborative effort by a team of 8 members. The website features a
+        product listing, video promotion, and a contact form to cleanly present the
+        business and its products.
+      </p>
+
+      <div class="achieve-row">
+        <span class="badge">UI Designer</span>
+        <span class="badge">Best in Design</span>
+        <span class="badge">HTML &amp; CSS Skills</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills &amp; Tools</h2>
+
+    <div class="skills-grid">
+      <div class="skill-panel">
+        <h3 class="skill-panel-title">Tech Stack</h3>
+        <ul class="tag-list">
+          <li class="tag">HTML</li>
+          <li class="tag">CSS</li>
+          <li class="tag">C#</li>
+          <li class="tag">Visual Studio Code</li>
+          <li class="tag">Roblox Studio</li>
+        </ul>
+      </div>
+
+      <div class="skill-panel">
+        <h3 class="skill-panel-title">Content Creating</h3>
+        <ul class="tag-list">
+          <li class="tag">Alight Motion</li>
+          <li class="tag">CapCut</li>
+          <li class="tag">Blurrr</li>
+          <li class="tag">Node Video</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section" id="contact">
+    <h2 class="section-title">Let's Connect</h2>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="https://www.facebook.com/jbnganiiii" target="_blank" rel="noopener">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M13.5 9.2h1.4V7.1h-1.4c-1.4 0-2.4 1-2.4 2.5v1.2H9.9v2h1.2V17h2.1v-4.2h1.4l.3-2h-1.7V9.7c0-.3.2-.5.3-.5z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="contact-text">
+          <span class="contact-label">Facebook</span>
+          <span class="contact-value">jbnganiiii</span>
+        </span>
+      </a>
+
+      <a class="contact-card" href="mailto:johnvillaflor299@gmail.com">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="5.5" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="contact-text">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">johnvillaflor299@gmail.com</span>
+        </span>
+      </a>
+
+      <a class="contact-card" href="https://www.instagram.com/whoswhokaii" target="_blank" rel="noopener">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="16.6" cy="7.4" r="1" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="contact-text">
+          <span class="contact-label">Instagram</span>
+          <span class="contact-value">whoswhokaii</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Keep leveling up. <span class="cursor cursor--footer">►</span></p>
+  </footer>
+
+</div>
+</body>
+</html>
