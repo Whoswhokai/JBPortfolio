@@ -636,57 +636,75 @@ a.info-line:hover{
   transform: translateX(0);
 }
 
-/* ---------- EDUCATION ---------- */
-.edu-card{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 22px;
+/* ---------- EDUCATION TIMELINE ---------- */
+.timeline{
+  position: relative;
+  padding-left: 34px;
+}
+
+.timeline::before{
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--border) 90%);
+}
+
+.timeline-item{
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.timeline-item:last-child{
+  padding-bottom: 0;
+}
+
+.timeline-dot{
+  position: absolute;
+  left: -34px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+  z-index: 1;
+}
+
+.timeline-dot--current{
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .18);
+}
+
+.timeline-card{
+  padding: 20px 22px;
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
   border-radius: 12px;
   background: var(--surface);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.edu-card + .edu-card{
-  margin-top: 16px;
-}
-
-.edu-card:hover{
+.timeline-card:hover{
   transform: translateX(4px);
   box-shadow: 0 16px 30px -18px var(--shadow);
 }
 
-.edu-mark{
-  flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: .5px;
-  background: rgba(var(--accent-rgb), .1);
-  color: var(--accent);
-  border: 1px solid rgba(var(--accent-rgb), .3);
-  text-align: center;
+.timeline-card .badge{
+  margin-bottom: 10px;
 }
 
-.edu-text h3{
+.timeline-card h3{
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 17px;
-  margin-bottom: 4px;
+  margin: 4px 0 6px;
 }
 
-.edu-text p{
+.timeline-card p{
   color: var(--text-dim);
   font-size: 14px;
-  margin-bottom: 8px;
 }
 
 /* ---------- HOBBIES ---------- */
